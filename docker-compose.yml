@@ -1,0 +1,12 @@
+version: '3'
+services:
+  product-search-service:
+    build: ./api
+    ports:
+      - 8001:5000
+  website-app:
+    build: ./web-app
+    ports:
+      - 127.0.0.1:8080:80
+    volumes:
+      - ./web-app/public-html:/usr/local/apache2/htdocs  
